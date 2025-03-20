@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bgcolor"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="74dp"
+        android:fontFamily="sans-serif-condensed"
+        android:text="Reminder"
+        android:textColor="#fff"
+        android:textFontWeight="700"
+        android:textSize="40sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.059"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.55"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
+
+        <RadioButton
+            android:id="@+id/radioButton1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:checked="false"
+            android:fontFamily="sans-serif-condensed"
+            android:padding="5dp"
+            android:text="Tareas diarias"
+            android:textColor="#fff"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/radioButton2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.391"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <RadioButton
+            android:id="@+id/radioButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:checked="false"
+            android:fontFamily="sans-serif-condensed"
+            android:padding="5dp"
+            android:text="Eventos importantes"
+            android:textColor="#fff"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    </RadioGroup>
+
+    <DatePicker
+        android:id="@+id/datePicker"
+        android:layout_width="252dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="81dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="78dp"
+        android:theme="@style/datePickerStyle"
+        android:calendarViewShown="false"
+        android:datePickerMode="spinner"
+        android:spinnersShown="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/timePicker" />
+
+    <TimePicker
+        android:id="@+id/timePicker"
+        android:layout_width="234dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="192dp"
+        android:layout_marginEnd="89dp"
+        android:layout_marginBottom="372dp"
+        android:textAlignment="center"
+        android:theme="@style/CustomTimePickerStyle"
+        android:timePickerMode="spinner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="86dp"
+        android:layout_height="77dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="Save Reminder"
+        android:padding="10dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/plus2"
+        android:stateListAnimator="@animator/boton_animacion"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.353"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/datePicker"
+        app:layout_constraintVertical_bias="0.515" />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="86dp"
+        android:layout_height="77dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="Delete reminder"
+        android:padding="10dp"
+        android:enabled="false"
+        android:scaleType="fitCenter"
+        android:src="@drawable/trash"
+        android:stateListAnimator="@animator/boton_animacion"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.649"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/datePicker"
+        app:layout_constraintVertical_bias="0.515" />
+</androidx.constraintlayout.widget.ConstraintLayout>
